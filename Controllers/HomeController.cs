@@ -15,7 +15,7 @@ namespace Mission6GroupAssignment.Controllers
 
         public HomeController(TaskContext someName)
         {
-            TContext = somename;
+            TContext = someName;
         }
 
         public IActionResult Index()
@@ -59,7 +59,7 @@ namespace Mission6GroupAssignment.Controllers
             ViewBag.Categories = TContext.Categories.ToList();
             var taskApp = TContext.TResponses.Single(x => x.TaskId == taskId);
 
-            return View(TaskApplication, taskApp);
+            return View("TaskApplication", taskApp);
         }
 
         [HttpPost]
@@ -74,7 +74,7 @@ namespace Mission6GroupAssignment.Controllers
         [HttpGet]
         public IActionResult Delete(int taskid)
         {
-            var task = TContext.TaskResponses.Single(x => x.TaskId == taskId);
+            var task = TContext.TResponses.Single(x => x.TaskId == taskid);
 
             return View(task);
         }
@@ -82,7 +82,7 @@ namespace Mission6GroupAssignment.Controllers
         [HttpPost]
         public IActionResult Delete(TaskResponse tr)
         {
-            TContext.TaskResponses.Remove(tr);
+            TContext.TResponses.Remove(tr);
             TContext.SaveChanges();
 
             return RedirectToAction("Quadrants");
