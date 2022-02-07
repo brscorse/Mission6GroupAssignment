@@ -11,11 +11,11 @@ namespace Mission6GroupAssignment.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private TaskContext TContext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(TaskContext someName)
         {
-            _logger = logger;
+            TContext = somename;
         }
 
         public IActionResult Index()
@@ -23,15 +23,69 @@ namespace Mission6GroupAssignment.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult TaskApplication()
         {
+            ViewBag.Categories = TContext.Categories.ToList();
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [HttpPost]
+        public IActionResult TaskApplication(TaskResponse tr)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if (ModelState.IsValid)
+            {
+                TContext.Add(tr);
+                TContext.SaveChanges();
+                return View("Confirmation", tr);
+            }
+            else
+            {
+                ViewBag.Categories = TContext.Categories.ToList();
+                return View();
+            }  
+        }
+
+        public IActionResult Quadrants()
+        {
+            var tasks = TContext.TResponses.ToList();
+            return View(tasks);
+
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int taskId)
+        {
+            ViewBag.Categories = TContext.Categories.ToList();
+            var taskApp = TContext.TResponses.Single(x => x.TaskId == taskId);
+
+            return View(TaskApplication, taskApp);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(TaskResponse info)
+        {
+            TContext.Update(info);
+            TContext.SaveChanges();
+
+            return RedirectToAction("Quadrants");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int taskid)
+        {
+            var task = TContext.TaskResponses.Single(x => x.TaskId == taskId);
+
+            return View(task);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(TaskResponse tr)
+        {
+            TContext.TaskResponses.Remove(tr);
+            TContext.SaveChanges();
+
+            return RedirectToAction("Quadrants");
         }
     }
 }
