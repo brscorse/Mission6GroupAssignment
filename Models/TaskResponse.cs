@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Mission6GroupAssignment.Models
 {
-    public class ToDoResponse
+    public class TaskResponse
     {
         [Key]
         [Required]
-        public int ToDoListId { get; set; }
+        public int TaskId { get; set; }
 
-        [Required(ErrorMessage = "Can't watch a movie without knowing the title...")]
+        [Required]
         public string Task { get; set; }
        
         public string DueDate { get; set; }
@@ -20,7 +20,7 @@ namespace Mission6GroupAssignment.Models
         [Required(ErrorMessage = "Which Quadrant is it in?")]
         public int Quadrant { get; set; }
         
-        public string Completed { get; set; }
+        public bool Completed { get; set; }
 
      
         //Foreign Key Relationship

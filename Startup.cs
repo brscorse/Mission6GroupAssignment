@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mission6GroupAssignment.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace Mission6GroupAssignment
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<ToDoListContext>(options =>
+            services.AddDbContext<TaskContext>(options =>
             {
                 options.UseSqlite(Configuration["ConnectionStrings:BlahConnection"]);
             });
