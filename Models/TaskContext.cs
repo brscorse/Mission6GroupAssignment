@@ -30,32 +30,32 @@ namespace Mission6GroupAssignment.Models
                 new Category { CategoryId = 4, CategoryName = "Church" }
 
                 );
-            mb.Entity<TaskResponse>().HasData(
-     new TaskResponse
-     {
-         TaskId = 1,
-         CategoryId = 2,
-         DueDate = "2/22/22",
-         Quadrant = 2,
-         Completed = true,
-     },
-     new TaskResponse
-     {
-         TaskId = 1,
-         CategoryId = 2,
-         DueDate = "2/2/22",
-         Quadrant = 3,
-         Completed = false,
-     },
-      new TaskResponse
-      {
-          TaskId = 1,
-          CategoryId = 4,
-          DueDate = "2/5/22",
-          Quadrant = 2,
-          Completed = true,
-      }
-      );
+            //mb.Entity<TaskResponse>().HasData(
+     //new TaskResponse
+     //{
+     //    TaskId = 1,
+     //    CategoryId = 2,
+     //    DueDate = "2/22/22",
+     //    Quadrant = 2,
+     //    Completed = true,
+     //},
+     //new TaskResponse
+     //{
+     //    TaskId = 1,
+     //    CategoryId = 2,
+     //    DueDate = "2/2/22",
+     //    Quadrant = 3,
+     //    Completed = false,
+     //},
+     // new TaskResponse
+     // {
+     //     TaskId = 1,
+     //     CategoryId = 4,
+     //     DueDate = "2/5/22",
+     //     Quadrant = 2,
+     //     Completed = true,
+     // }
+     // );
         }
     }
 }
