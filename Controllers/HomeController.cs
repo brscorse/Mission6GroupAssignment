@@ -27,7 +27,7 @@ namespace Mission6GroupAssignment.Controllers
         public IActionResult TaskApplication()
         {
             ViewBag.Categories = TContext.Categories.ToList();
-            return View();
+            return View(new TaskResponse());
         }
 
         [HttpPost]
