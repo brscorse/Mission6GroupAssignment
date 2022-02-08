@@ -10,7 +10,7 @@ namespace Mission6GroupAssignment.Models
     public class TaskContext : DbContext
     {
         //Constructor
-        public TaskContext(DbContextOptions<TaskContext> options) : base(options)
+        public TaskContext (DbContextOptions<TaskContext> options) : base (options)
         {
 
         }
