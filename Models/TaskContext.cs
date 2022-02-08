@@ -30,8 +30,8 @@ namespace Mission6GroupAssignment.Models
                 new Category { CategoryId = 4, CategoryName = "Church" }
 
                 );
-     //       mb.Entity<TaskResponse>().HasData(
-     ////new TaskResponse
+            //mb.Entity<TaskResponse>().HasData(
+     //new TaskResponse
      //{
      //    TaskId = 1,
      //    CategoryId = 2,
@@ -55,7 +55,7 @@ namespace Mission6GroupAssignment.Models
      //     Quadrant = 2,
      //     Completed = true,
      // }
-      //);
+     // );
         }
     }
 }
