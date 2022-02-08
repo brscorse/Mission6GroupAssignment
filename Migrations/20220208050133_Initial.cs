@@ -62,6 +62,26 @@ namespace Mission6GroupAssignment.Migrations
                 columns: new[] { "CategoryId", "CategoryName" },
                 values: new object[] { 4, "Church" });
 
+            migrationBuilder.InsertData(
+                table: "TResponses",
+                columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
+                values: new object[] { 1, 1, true, "2/22/22", 1, "Hospital" });
+
+            migrationBuilder.InsertData(
+                table: "TResponses",
+                columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
+                values: new object[] { 2, 1, true, "2/22/22", 2, "Excersise" });
+
+            migrationBuilder.InsertData(
+                table: "TResponses",
+                columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
+                values: new object[] { 3, 3, false, "2/2/22", 3, "Phone Call" });
+
+            migrationBuilder.InsertData(
+                table: "TResponses",
+                columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
+                values: new object[] { 4, 3, true, "2/5/22", 4, "Busy Work" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_TResponses_CategoryId",
                 table: "TResponses",

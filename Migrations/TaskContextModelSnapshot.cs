@@ -78,6 +78,44 @@ namespace Mission6GroupAssignment.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("TResponses");
+
+                    b.HasData(
+                        new
+                        {
+                            TaskId = 1,
+                            CategoryId = 1,
+                            Completed = true,
+                            DueDate = "2/22/22",
+                            Quadrant = 1,
+                            Task = "Hospital"
+                        },
+                        new
+                        {
+                            TaskId = 2,
+                            CategoryId = 1,
+                            Completed = true,
+                            DueDate = "2/22/22",
+                            Quadrant = 2,
+                            Task = "Excersise"
+                        },
+                        new
+                        {
+                            TaskId = 3,
+                            CategoryId = 3,
+                            Completed = false,
+                            DueDate = "2/2/22",
+                            Quadrant = 3,
+                            Task = "Phone Call"
+                        },
+                        new
+                        {
+                            TaskId = 4,
+                            CategoryId = 3,
+                            Completed = true,
+                            DueDate = "2/5/22",
+                            Quadrant = 4,
+                            Task = "Busy Work"
+                        });
                 });
 
             modelBuilder.Entity("Mission6GroupAssignment.Models.TaskResponse", b =>

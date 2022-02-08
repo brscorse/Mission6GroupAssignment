@@ -1,9 +1,7 @@
 ﻿@{
-    ViewData["Quadrants"] = "Quadrants";
+    ViewData["Title"] = "Quadrants";
 }
-@{
-    ViewData["Title"] = "Home Page";
-}
+
 <body>
     <h1>Stephen Covey's Time Management Matrix</h1>
     <br />
@@ -18,9 +16,14 @@
                         <h2>Urgent</h2>
                         <h4>Quadrant 1</h4>
                         <ul>
-                            <li>Stuff here</li>
-                            <li>Stuff here</li>
-                            <li>Stuff here</li>
+                            @foreach (var x in Model)
+                            {
+                                @if (x.CategoryId == 1)
+                                {
+                                        <li>@x.Task Category: @x.Category.CategoryName Due: @x.DueDate Completed: @x.Completed</li>
+                                 }
+
+                             }
                         </ul>
                     </div>
                     <div class="col-4">
