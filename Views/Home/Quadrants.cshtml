@@ -20,10 +20,13 @@
                             {
                                 @if (x.CategoryId == 1)
                                 {
-                                        <li>@x.Task Category: @x.Category.CategoryName Due: @x.DueDate Completed: @x.Completed</li>
-                                 }
+                                    <li>Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate, Completed: @x.Completed</li>
+                                    <td><a class="btn" asp-controller="Home" asp-action="Edit" asp-route-applicationid="@x.TaskId">Edit</a></td>
+                                    <td><a class="btn" asp-controller="Home" asp-action="Delete" asp-route-applicationid="@x.TaskId">Delete</a></td>
+                                    
+                                }
 
-                             }
+                            }
                         </ul>
                     </div>
                     <div class="col-4">
