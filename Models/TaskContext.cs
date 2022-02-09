@@ -34,7 +34,17 @@ namespace Mission6GroupAssignment.Models
      new TaskResponse
      {
          TaskId = 1,
-         CategoryId = 2,
+         Task = "Hospital",
+         CategoryId = 1,
+         DueDate = "2/22/22",
+         Quadrant = 1,
+         Completed = true,
+     },
+     new TaskResponse
+     {
+         TaskId = 2,
+         Task = "Excercise",
+         CategoryId = 1,
          DueDate = "2/22/22",
          Quadrant = 2,
          Completed = true,
