@@ -43,7 +43,7 @@ namespace Mission6GroupAssignment.Models
      new TaskResponse
      {
          TaskId = 2,
-         Task = "Excersise",
+         Task = "Exercise",
          CategoryId = 1,
          DueDate = "2/22/22",
          Quadrant = 2,
