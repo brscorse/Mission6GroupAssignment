@@ -21,10 +21,10 @@
                         <ul>
                             @foreach (var x in Model)
                             {
-                                @if (x.Quadrant == 1)
+                                @if (x.Quadrant == 1 && x.Completed == false)
                                 {
                                     <li>
-                                        Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate, Completed: @x.Completed
+                                        Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
                                         <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
                                         <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
                                     </li>
@@ -40,10 +40,10 @@
                         <ul>
                             @foreach (var x in Model)
                             {
-                                @if (x.Quadrant == 2)
+                                @if (x.Quadrant == 2 && x.Completed == false)
                                 {
                                     <li>
-                                        Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate, Completed: @x.Completed
+                                        Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
                                         <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
                                         <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
                                     </li>
@@ -70,10 +70,10 @@
                         <ul>
                             @foreach (var x in Model)
                             {
-                                @if (x.Quadrant == 3)
+                                @if (x.Quadrant == 3 && x.Completed == false)
                                 {
                                     <li>
-                                        Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate, Completed: @x.Completed
+                                        Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
                                         <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
                                         <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
                                     </li>
@@ -88,10 +88,10 @@
                         <ul>
                             @foreach (var x in Model)
                             {
-                                @if (x.Quadrant == 4)
+                                @if (x.Quadrant == 4 && x.Completed == false)
                                 {
                                     <li>
-                                        Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate, Completed: @x.Completed
+                                        Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
                                         <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
                                         <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
                                     </li>
