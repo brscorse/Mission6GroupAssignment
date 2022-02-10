@@ -1,21 +1,45 @@
 ﻿@{
     ViewData["Title"] = "Quadrants";
+    Layout = ""; 
 }
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">7 Habits</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="TaskApplication">Submit a New Task</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="Quadrants">View Tasks</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <body>
+    <br />
+    <br />
+    <br />
+    <h1 class="container">Stephen Covey's Time Management Matrix</h1>
+    <br />
+    <br />
+    <br />
 
-    <h1>Stephen Covey's Time Management Matrix</h1>
-    <br />
-    <br />
-    <br />
-    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <div class="container-fluid" style="border:1px solid #cecece;">
-
         <div class="row">
-            <div class="col-3"><br /><br /><br /><h2>Important</h2></div>
-            <div class="col-9">
+            <div class="col-2"><br /><br /><br /><h2 style = "text-decoration:underline; color: indigo">Important</h2></div>
+            <div class="col-10">
                 <div class="row">
                     <div class="col-6">
+<<<<<<< HEAD
                         <h2>Urgent</h2>
                         <h4>Quadrant 1</h4>
                         <ul>
@@ -47,13 +71,54 @@
                                         <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
                                         <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
                                     </li>
+=======
+                        <br />
+                        <h2 style="text-decoration:underline; color: indigo">Urgent</h2>
+                        <br />
+                        
+                            <h4>Quadrant 1</h4>
+                            <ul>
+                                @foreach (var x in Model)
+                                {
+                                    @if (x.Quadrant == 1)
+                                    {
+                                        <li>
+                                            Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
+                                            <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
+                                            <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
+                                        </li>
+
+                                    }
+>>>>>>> d367e0758afb7f512d0d8018b4108c20f7b179e6
 
                                 }
-
-                            }
-                        </ul>
+                            </ul>
+                        
                     </div>
-                </div>
+                        <div class="col-6">
+                            <br />
+                            <h2 style="text-decoration:underline; color: indigo">Not Urgent</h2>
+                            <br />
+                            
+                                <h4>Quadrant 2</h4>
+                                <ul>
+                                    @foreach (var x in Model)
+                                    {
+                                        @if (x.Quadrant == 2)
+                                        {
+                                            <li>
+                                                Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
+                                                <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
+                                                <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
+                                            </li>
+
+                                        }
+
+                                    }
+                                </ul>
+                            
+                        </div>
+                    </div>
             </div>
         </div>
         <br />
@@ -62,10 +127,10 @@
         <br />
 
         <div class="row">
-            <div class="col-3"><br /><br /><h2>Not Important</h2></div>
-            <div class="col-9">
+            <div class="col-2"><br /><br /><h2 style = "text-decoration:underline; color: indigo">Not Important</h2></div>
+            <div class="col-10">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-6" >
                         <h4>Quadrant 3</h4>
                         <ul>
                             @foreach (var x in Model)
@@ -83,7 +148,7 @@
                             }
                         </ul>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6" >
                         <h4>Quadrant 4</h4>
                         <ul>
                             @foreach (var x in Model)
