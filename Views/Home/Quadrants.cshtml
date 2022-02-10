@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Quadrants";
-    Layout = ""; 
+    Layout = "";
 }
 <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 
@@ -35,17 +35,19 @@
 
     <div class="container-fluid" style="border:1px solid #cecece;">
         <div class="row">
-            <div class="col-2"><br /><br /><br /><h2 style = "text-decoration:underline; color: indigo">Important</h2></div>
+            <div class="col-2"><br /><br /><br /><h2 style="text-decoration:underline; color: indigo">Important</h2></div>
             <div class="col-10">
                 <div class="row">
                     <div class="col-6">
-<<<<<<< HEAD
-                        <h2>Urgent</h2>
+                        <br />
+                        <h2 style="text-decoration:underline; color: indigo">Urgent</h2>
+                        <br />
+
                         <h4>Quadrant 1</h4>
                         <ul>
                             @foreach (var x in Model)
                             {
-                                @if (x.Quadrant == 1 && x.Completed == false)
+                                @if (x.Quadrant == 1)
                                 {
                                     <li>
                                         Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
@@ -57,68 +59,32 @@
 
                             }
                         </ul>
+
                     </div>
-                    <div class="col-4">
-                        <h2>Not Urgent</h2>
+                    <div class="col-6">
+                        <br />
+                        <h2 style="text-decoration:underline; color: indigo">Not Urgent</h2>
+                        <br />
+
                         <h4>Quadrant 2</h4>
                         <ul>
                             @foreach (var x in Model)
                             {
-                                @if (x.Quadrant == 2 && x.Completed == false)
+                                @if (x.Quadrant == 2)
                                 {
                                     <li>
                                         Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
                                         <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
                                         <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
                                     </li>
-=======
-                        <br />
-                        <h2 style="text-decoration:underline; color: indigo">Urgent</h2>
-                        <br />
-                        
-                            <h4>Quadrant 1</h4>
-                            <ul>
-                                @foreach (var x in Model)
-                                {
-                                    @if (x.Quadrant == 1)
-                                    {
-                                        <li>
-                                            Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
-                                            <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
-                                            <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
-                                        </li>
-
-                                    }
->>>>>>> d367e0758afb7f512d0d8018b4108c20f7b179e6
 
                                 }
-                            </ul>
-                        
-                    </div>
-                        <div class="col-6">
-                            <br />
-                            <h2 style="text-decoration:underline; color: indigo">Not Urgent</h2>
-                            <br />
-                            
-                                <h4>Quadrant 2</h4>
-                                <ul>
-                                    @foreach (var x in Model)
-                                    {
-                                        @if (x.Quadrant == 2)
-                                        {
-                                            <li>
-                                                Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
-                                                <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
-                                                <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
-                                            </li>
 
-                                        }
+                            }
+                        </ul>
 
-                                    }
-                                </ul>
-                            
-                        </div>
                     </div>
+                </div>
             </div>
         </div>
         <br />
@@ -127,15 +93,15 @@
         <br />
 
         <div class="row">
-            <div class="col-2"><br /><br /><h2 style = "text-decoration:underline; color: indigo">Not Important</h2></div>
+            <div class="col-2"><br /><br /><h2 style="text-decoration:underline; color: indigo">Not Important</h2></div>
             <div class="col-10">
                 <div class="row">
-                    <div class="col-6" >
+                    <div class="col-6">
                         <h4>Quadrant 3</h4>
                         <ul>
                             @foreach (var x in Model)
                             {
-                                @if (x.Quadrant == 3 && x.Completed == false)
+                                @if (x.Quadrant == 3)
                                 {
                                     <li>
                                         Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
@@ -148,12 +114,12 @@
                             }
                         </ul>
                     </div>
-                    <div class="col-6" >
+                    <div class="col-6">
                         <h4>Quadrant 4</h4>
                         <ul>
                             @foreach (var x in Model)
                             {
-                                @if (x.Quadrant == 4 && x.Completed == false)
+                                @if (x.Quadrant == 4)
                                 {
                                     <li>
                                         Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
@@ -171,9 +137,4 @@
         </div>
     </div>
 </body>
-
-
-
-
-
 
