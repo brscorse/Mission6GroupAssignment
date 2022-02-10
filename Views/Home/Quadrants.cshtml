@@ -39,6 +39,39 @@
             <div class="col-10">
                 <div class="row">
                     <div class="col-6">
+<<<<<<< HEAD
+                        <h2>Urgent</h2>
+                        <h4>Quadrant 1</h4>
+                        <ul>
+                            @foreach (var x in Model)
+                            {
+                                @if (x.Quadrant == 1 && x.Completed == false)
+                                {
+                                    <li>
+                                        Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
+                                        <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
+                                        <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
+                                    </li>
+
+                                }
+
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <h2>Not Urgent</h2>
+                        <h4>Quadrant 2</h4>
+                        <ul>
+                            @foreach (var x in Model)
+                            {
+                                @if (x.Quadrant == 2 && x.Completed == false)
+                                {
+                                    <li>
+                                        Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
+                                        <a class="btn" asp-controller="Home" asp-action="Edit" asp-route-taskId="@x.TaskId">Edit</a>
+                                        <a class="btn" asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
+                                    </li>
+=======
                         <br />
                         <h2 style="text-decoration:underline; color: indigo">Urgent</h2>
                         <br />
@@ -56,6 +89,7 @@
                                         </li>
 
                                     }
+>>>>>>> d367e0758afb7f512d0d8018b4108c20f7b179e6
 
                                 }
                             </ul>
@@ -101,7 +135,7 @@
                         <ul>
                             @foreach (var x in Model)
                             {
-                                @if (x.Quadrant == 3)
+                                @if (x.Quadrant == 3 && x.Completed == false)
                                 {
                                     <li>
                                         Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
@@ -119,7 +153,7 @@
                         <ul>
                             @foreach (var x in Model)
                             {
-                                @if (x.Quadrant == 4)
+                                @if (x.Quadrant == 4 && x.Completed == false)
                                 {
                                     <li>
                                         Task: @x.Task, Category: @x.Category.CategoryName, Due: @x.DueDate
